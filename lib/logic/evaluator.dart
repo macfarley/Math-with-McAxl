@@ -65,7 +65,7 @@ class Evaluator {
       if (op == '*') {
         value *= right;
       } else if (op == '/') {
-        if (right == 0) throw FormatException('Division by zero');
+        if (right == 0) throw const FormatException('Division by zero');
         value /= right;
       } else {
         value %= right;
@@ -110,7 +110,7 @@ class Evaluator {
       _pos++;
       final value = _parseExpression();
       _skipWhitespace();
-      if (_current != ')') throw FormatException('Expected ")"');
+      if (_current != ')') throw const FormatException('Expected ")"');
       _pos++;
       return value;
     }
@@ -187,19 +187,19 @@ class Evaluator {
       case 'atan':
         return math.atan(arg);
       case 'sqrt':
-        if (arg < 0) throw FormatException('sqrt of negative number');
+        if (arg < 0) throw const FormatException('sqrt of negative number');
         return math.sqrt(arg);
       case 'abs':
         return arg.abs();
       case 'log':
       case 'ln':
-        if (arg <= 0) throw FormatException('log of non-positive number');
+        if (arg <= 0) throw const FormatException('log of non-positive number');
         return math.log(arg);
       case 'log2':
-        if (arg <= 0) throw FormatException('log2 of non-positive number');
+        if (arg <= 0) throw const FormatException('log2 of non-positive number');
         return math.log(arg) / math.ln2;
       case 'log10':
-        if (arg <= 0) throw FormatException('log10 of non-positive number');
+        if (arg <= 0) throw const FormatException('log10 of non-positive number');
         return math.log(arg) / math.ln10;
       case 'exp':
         return math.exp(arg);

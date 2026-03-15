@@ -135,26 +135,26 @@ class _TipTaxTabState extends State<_TipTaxTab> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          _SectionHeader('Bill Amount'),
+          const _SectionHeader('Bill Amount'),
           _NumberField(label: 'Bill (\$)', controller: _billCtrl, onChanged: (_) => _calc()),
           const SizedBox(height: 16),
-          _SectionHeader('Tip'),
+          const _SectionHeader('Tip'),
           _NumberField(label: 'Tip %', controller: _tipCtrl, onChanged: (_) => _calc()),
           _ResultCard(_tipResult),
           const SizedBox(height: 16),
-          _SectionHeader('Sales Tax'),
+          const _SectionHeader('Sales Tax'),
           _NumberField(label: 'Tax %', controller: _taxCtrl, onChanged: (_) => _calc()),
           _ResultCard(_taxResult),
           const SizedBox(height: 16),
-          _SectionHeader('Discount'),
+          const _SectionHeader('Discount'),
           _NumberField(label: 'Discount %', controller: _discCtrl, onChanged: (_) => _calc()),
           _ResultCard(_discResult),
           const SizedBox(height: 16),
-          _SectionHeader('Split Bill (with tip)'),
+          const _SectionHeader('Split Bill (with tip)'),
           _NumberField(label: 'People', controller: _peopleCtrl, onChanged: (_) => _calc()),
           _ResultCard(_splitResult),
           const SizedBox(height: 16),
-          _SectionHeader('Percent Change'),
+          const _SectionHeader('Percent Change'),
           _NumberField(label: 'Old Value', controller: _pctOldCtrl, onChanged: (_) => _calc()),
           _NumberField(label: 'New Value', controller: _pctNewCtrl, onChanged: (_) => _calc()),
           _ResultCard(_pctChangeResult),
@@ -211,7 +211,7 @@ class _InterestTabState extends State<_InterestTab> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          _SectionHeader('Simple Interest'),
+          const _SectionHeader('Simple Interest'),
           _NumberField(label: 'Principal (\$)', controller: _principalCtrl, onChanged: (_) => _calc()),
           _NumberField(label: 'Rate (%)', controller: _rateCtrl, onChanged: (_) => _calc()),
           _NumberField(label: 'Time (years)', controller: _yearsCtrl, onChanged: (_) => _calc()),
@@ -291,7 +291,7 @@ class _CalendarTabState extends State<_CalendarTab> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          _SectionHeader('Date Picker'),
+          const _SectionHeader('Date Picker'),
           Row(children: [
             Expanded(
               child: OutlinedButton.icon(
@@ -312,7 +312,7 @@ class _CalendarTabState extends State<_CalendarTab> {
           const SizedBox(height: 8),
           _ResultCard(_result),
           const SizedBox(height: 16),
-          _SectionHeader('Add / Subtract Days from Date A'),
+          const _SectionHeader('Add / Subtract Days from Date A'),
           Row(children: [
             Expanded(
               child: Slider(
@@ -331,7 +331,7 @@ class _CalendarTabState extends State<_CalendarTab> {
           ]),
           _ResultCard(_addDaysResult),
           const SizedBox(height: 16),
-          _SectionHeader('Count Weekday Between Dates'),
+          const _SectionHeader('Count Weekday Between Dates'),
           DropdownButton<int>(
             value: _selectedWeekday,
             items: List.generate(7, (i) => DropdownMenuItem(
@@ -396,7 +396,7 @@ class _TimeTabState extends State<_TimeTab> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          _SectionHeader('Add Two Times (HH:MM)'),
+          const _SectionHeader('Add Two Times (HH:MM)'),
           _NumberField(
             label: 'Time 1 (HH:MM)',
             controller: _t1Ctrl,
@@ -411,7 +411,7 @@ class _TimeTabState extends State<_TimeTab> {
           ),
           _ResultCard(_addResult),
           const SizedBox(height: 16),
-          _SectionHeader('Minutes → Hours & Minutes'),
+          const _SectionHeader('Minutes → Hours & Minutes'),
           Row(children: [
             Expanded(
               child: Slider(
